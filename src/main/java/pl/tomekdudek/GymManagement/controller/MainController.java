@@ -19,6 +19,11 @@ public class MainController {
     @Autowired
     UserRepository userRepository;
 
+    @GetMapping("/")
+    public String homePage(){
+        return "index";
+    }
+
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
         return "index";
@@ -39,15 +44,14 @@ public class MainController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    @ResponseBody
     public String register(@ModelAttribute("userObject") @Valid UserForm userForm, BindingResult result) {
         if (result.hasErrors()) {
-            return "index";
+            return "userForm";
         }
 
         User userObject = new User(userForm);
         userRepository.save(userObject);
-        return "Register succesful!";
+        return "registerSuccess";
     }
 
 

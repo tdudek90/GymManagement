@@ -1,11 +1,20 @@
 package pl.tomekdudek.GymManagement.model.form;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 public class UserForm {
 
     private int id;
+    @NotEmpty(message = "Name may not be empty")
     private String name;
+    @NotEmpty(message = "Lastname may not be empty")
     private String lastname;
+    @NotEmpty(message = "Mail may not be empty")
+    @Email
     private String mail;
+    @NotEmpty(message = "Password may not be empty")
     private String password;
 
     public UserForm() {
