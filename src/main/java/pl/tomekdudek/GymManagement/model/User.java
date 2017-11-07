@@ -17,13 +17,21 @@ public class User {
     private String lastname;
     private String mail;
     private String password;
-    private int active;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
     public User() {
+    }
+
+    public User(User user) {
+        this.id = user.getId();
+        this.name = user.getName();
+        this.lastname = user.getLastname();
+        this.mail = user.getMail();
+        this.password = user.getPassword();
+        this.roles = user.getRoles();
     }
 
     public int getId() {
@@ -66,13 +74,6 @@ public class User {
         this.password = password;
     }
 
-    public int getActive() {
-        return active;
-    }
-
-    public void setActive(int active) {
-        this.active = active;
-    }
 
     public Set<Role> getRoles() {
         return roles;
