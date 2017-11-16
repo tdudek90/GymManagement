@@ -30,6 +30,11 @@ public class CustomUserDetails extends User implements UserDetails {
     }
 
     @Override
+    public String getPassword(){
+        return super.getPassword();
+    }
+
+    @Override
     public boolean isAccountNonExpired() {
         return true;
     }

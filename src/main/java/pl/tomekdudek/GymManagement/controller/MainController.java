@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.tomekdudek.GymManagement.model.repository.UserRepository;
+import pl.tomekdudek.GymManagement.repository.UserRepository;
 
 
 @Controller

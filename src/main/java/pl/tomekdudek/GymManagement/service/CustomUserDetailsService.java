@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import pl.tomekdudek.GymManagement.model.CustomUserDetails;
 import pl.tomekdudek.GymManagement.model.User;
-import pl.tomekdudek.GymManagement.model.repository.UserRepository;
+import pl.tomekdudek.GymManagement.repository.UserRepository;
 
 import java.util.Optional;
 

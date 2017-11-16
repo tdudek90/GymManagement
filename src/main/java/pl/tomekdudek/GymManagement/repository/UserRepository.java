@@ -1,4 +1,4 @@
-package pl.tomekdudek.GymManagement.model.repository;
+package pl.tomekdudek.GymManagement.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.tomekdudek.GymManagement.model.User;

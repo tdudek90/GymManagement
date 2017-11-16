@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.tomekdudek.GymManagement.model.User;
 import pl.tomekdudek.GymManagement.model.form.UserForm;
-import pl.tomekdudek.GymManagement.model.repository.UserRepository;
+import pl.tomekdudek.GymManagement.repository.UserRepository;
 
 import javax.validation.Valid;
 
