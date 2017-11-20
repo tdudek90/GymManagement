@@ -20,7 +20,7 @@ import pl.tomekdudek.GymManagement.service.CustomUserDetailsService;
 @EnableWebSecurity
 @EnableJpaRepositories(basePackageClasses = UserRepository.class)
 @Configuration
-public class WebSecurity extends WebSecurityConfigurerAdapter{
+public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private CustomUserDetailsService userDetailsService;
@@ -45,6 +45,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
                 .antMatchers("/index").permitAll()
                 .antMatchers("/check").permitAll()
                 .antMatchers("/user").permitAll()
+                .antMatchers("/delete").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll()

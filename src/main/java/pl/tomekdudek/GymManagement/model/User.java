@@ -1,5 +1,6 @@
 package pl.tomekdudek.GymManagement.model;
 
+import pl.tomekdudek.GymManagement.model.form.DeleteForm;
 import pl.tomekdudek.GymManagement.model.form.UserForm;
 
 import javax.persistence.*;
@@ -36,11 +37,15 @@ public class User {
         this.roles = user.getRoles();
     }
 
-    public User(UserForm userForm){
+    public User(UserForm userForm) {
         name = userForm.getName();
         lastname = userForm.getLastname();
         mail = userForm.getMail();
         password = userForm.getPassword();
+    }
+
+    public User(DeleteForm deleteForm) {
+        this.id = deleteForm.getUserId();
     }
 
     public int getId() {
