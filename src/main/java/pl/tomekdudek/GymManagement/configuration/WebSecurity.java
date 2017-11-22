@@ -46,6 +46,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/check").permitAll()
                 .antMatchers("/user").permitAll()
                 .antMatchers("/delete").permitAll()
+                .antMatchers("/edit").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll()

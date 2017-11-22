@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//thymeleaf.org">
+<head>
+    <meta/>
+    <title>EDIT</title>
+
+
+    <p><b>Edit</b></p>
+    <form action="#" th:action="@{/edit}" th:object="${editObject}" method="post">
+        <p>User ID to edit <input type="number" th:field="*{id}"/></p>
+        <p>Name<input type="text" th:field="*{name}"/></p>
+        <p>Last name<input type="text" th:field="*{lastname}"/></p>
+        <p>Mail<input type="text" th:field="*{mail}"/></p>
+        <p>Password<input type="text" th:field="*{password}"/></p>
+        <p><input type="submit" value="Edit"/></p>
+
+    </form>
+
+</head>
+<body>
+
+</body>
+</html>
