@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//thymeleaf.org">
+<head>
+    <meta/>
+    <title>Contact form</title>
+
+
+    <p><b>Contact</b></p>
+    <form action="#" th:action="@{/contact}" th:object="${mailObject}" method="post">
+        <p>Name<input type="text" th:field="*{name}"/></p>
+        <p>Mail<input type="text" th:field="*{email}"/></p>
+        <p>Phone number<input type="text" th:field="*{phoneNumber}"/></p>
+        <p>Message<input type="text" th:textarea="*{message}"/></p>
+        <p><input type="submit" value="Send"/></p>
+    </form>
+</head>
+<body>
+
+</body>
+</html>
