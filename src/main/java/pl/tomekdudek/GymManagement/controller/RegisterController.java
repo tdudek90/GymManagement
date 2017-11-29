@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.tomekdudek.GymManagement.model.User;
 import pl.tomekdudek.GymManagement.model.form.UserForm;
 import pl.tomekdudek.GymManagement.repository.UserRepository;
+import pl.tomekdudek.GymManagement.service.MailService;
 
 import javax.validation.Valid;
 
@@ -19,6 +20,9 @@ public class RegisterController {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    MailService mailService;
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -37,6 +41,9 @@ public class RegisterController {
             if (isUserExist(userForm.getName())) {
                 User userObject = new User(userForm);
                 userRepository.save(userObject);
+                String addressee = userForm.getMail();
+                String name = userForm.getName();
+                mailService.sendEmail(addressee, name);
                 return "registerSuccess";
             } else
                 return "userForm";

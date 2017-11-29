@@ -29,4 +29,20 @@ public class MailService {
 
         javaMailSender.send(mail);
     }
+
+    public void sendEmail(String addressee, String name){
+        MimeMessage mail = javaMailSender.createMimeMessage();
+        try {
+            MimeMessageHelper helper = new MimeMessageHelper(mail, true);
+            helper.setTo(addressee);
+            String message = "Hello " + name + " If you see this message, you have been registered with success!";
+            helper.setText(message, true);
+
+        } catch (javax.mail.MessagingException e) {
+            e.printStackTrace();
+        }
+
+        javaMailSender.send(mail);
+    }
+
 }
