@@ -1,5 +1,6 @@
 package pl.tomekdudek.GymManagement.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import pl.tomekdudek.GymManagement.model.form.DeleteForm;
 import pl.tomekdudek.GymManagement.model.form.UserForm;
 
@@ -10,6 +11,7 @@ import java.util.Set;
  * Created by Tomek on 2017-11-06.
  */
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User {
 
     @Id
@@ -96,4 +98,6 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
 }

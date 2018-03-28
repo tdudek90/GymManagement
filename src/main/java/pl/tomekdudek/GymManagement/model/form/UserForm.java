@@ -7,14 +7,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class UserForm {
 
     private int id;
-    @NotEmpty(message = "Name may not be empty")
+    @NotEmpty
     private String name;
-    @NotEmpty(message = "Lastname may not be empty")
+    @NotEmpty
     private String lastname;
-    @NotEmpty(message = "Mail may not be empty")
+    @NotEmpty
     @Email
     private String mail;
-    @NotEmpty(message = "Password may not be empty")
+    @NotEmpty
     private String password;
 
     public UserForm() {

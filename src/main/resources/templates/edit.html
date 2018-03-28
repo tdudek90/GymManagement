@@ -6,7 +6,7 @@
 
 
     <p><b>Edit</b></p>
-    <form action="#" th:action="@{/edit}" th:object="${editObject}" method="post">
+    <form action="#" th:action="@{/update}" th:object="${editObject}" method="post">
         <p>User ID to edit <input type="number" th:field="*{id}"/></p>
         <p>Name<input type="text" th:field="*{name}"/></p>
         <p>Last name<input type="text" th:field="*{lastname}"/></p>
