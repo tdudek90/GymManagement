@@ -29,7 +29,8 @@ public class ContactController {
         if (result.hasErrors()) {
             return "contact";
         } else {
-            mailService.sendEmail("ttomekk0@gmail.com", new ContactForm(contactForm.getName(), contactForm.getEmail(), contactForm.getPhoneNumber(), contactForm.getMessage()));
+            String message  = "Name: " + contactForm.getName() + "Mail: " + contactForm.getEmail() + "Phone number: " + contactForm.getPhoneNumber() + "Message: " + contactForm.getMessage();
+            mailService.sendEmail("ttomekk0@gmail.com",message);
             return "contactSuccess";
         }
     }

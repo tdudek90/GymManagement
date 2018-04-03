@@ -10,6 +10,7 @@ import pl.tomekdudek.GymManagement.model.User;
 import pl.tomekdudek.GymManagement.model.form.DeleteForm;
 import pl.tomekdudek.GymManagement.model.form.UserForm;
 import pl.tomekdudek.GymManagement.repository.UserRepository;
+import pl.tomekdudek.GymManagement.service.MailService;
 import pl.tomekdudek.GymManagement.service.UserServiceImpl;
 
 import javax.validation.Valid;
@@ -23,6 +24,9 @@ public class UserController {
 
     @Autowired
     UserServiceImpl userService;
+
+    @Autowired
+    MailService mailService;
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerUser(Model model) {
@@ -41,6 +45,7 @@ public class UserController {
             if (isUserExist(userForm.getName())) {
                 User userObject = new User(userForm);
                 userService.addUser(userObject);
+                mailService.sendEmail(userForm.getMail(),"Hello, "+ userForm.getName() + " If you see this message, you have been registered with success!");
                 return "registerSuccess";
             } else
                 return "userForm";
