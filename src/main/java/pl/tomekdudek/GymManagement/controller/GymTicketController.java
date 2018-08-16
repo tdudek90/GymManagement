@@ -24,7 +24,7 @@ public class GymTicketController {
 
     @RequestMapping(value = "/tickets/{gymTicketId}", method = RequestMethod.GET)
     @ResponseBody
-    public GymTicket getAllTickets(@PathVariable int gymTicketId) {
+    public GymTicket getGymTicket(@PathVariable int gymTicketId) {
         return gymTicketRepository.findOne(gymTicketId);
     }
 

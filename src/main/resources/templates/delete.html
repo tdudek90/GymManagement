@@ -5,7 +5,7 @@
     <title>Delete</title>
 
     <form action="#" th:action="@{/delete}" th:object="${deleteObject}" method="post">
-        <p>User ID to delte <input type="number" th:field="*{userId}"/></p>
+        <p>User ID to delete <input type="number" th:field="*{userId}"/></p>
         <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">ID error</span>
 
         <p><input type="submit" value="Delete"/></p>
